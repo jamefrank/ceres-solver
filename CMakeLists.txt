@@ -31,6 +31,8 @@
 
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_STANDARD 14)
+
 if (POLICY CMP0074) # Added in CMake 3.12
   # FindTBB.cmake uses TBB_ROOT in a way that is historical, but also compliant
   # with CMP0074 so suppress the legacy compatibility warning and allow its use.
@@ -786,3 +788,5 @@ if (EXPORT_BUILD_DIR)
     "${Ceres_BINARY_DIR}/CeresConfig.cmake" @ONLY)
 
 endif (EXPORT_BUILD_DIR)
+
+include(ceres_python_bindings/AddToCeres.cmake)
